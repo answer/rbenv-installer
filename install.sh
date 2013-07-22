@@ -5,15 +5,25 @@ echo 'eval "$(rbenv init -)"' >> .bash_profile
 
 if [ -d .rbenv ]; then
   cd .rbenv && git pull
+  cd ..
 else
   git clone git://github.com/sstephenson/rbenv.git .rbenv
 fi
 
-cd $dir && mkdir -p .rbenv/plugins && cd .rbenv/plugins/
+mkdir -p .rbenv/plugins && cd .rbenv/plugins/
+
 if [ -d ruby-build ]; then
   cd ruby-build && git pull
+  cd ..
 else
   git clone git://github.com/sstephenson/ruby-build.git
+fi
+
+if [ -d rbenv-binstubs ]; then
+  cd rbenv-binstubs && git pull
+  cd ..
+else
+  git clone https://github.com/ianheggie/rbenv-binstubs.git
 fi
 
 echo
