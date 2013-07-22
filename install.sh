@@ -3,7 +3,18 @@ dir=`pwd`
 echo 'export PATH="'$dir'/.rbenv/bin:$PATH"' >> .bash_profile
 echo 'eval "$(rbenv init -)"' >> .bash_profile
 
-git clone git://github.com/sstephenson/rbenv.git .rbenv && mkdir -p .rbenv/plugins && cd .rbenv/plugins/ && git clone git://github.com/sstephenson/ruby-build.git
+if [ -d .rbenv ]; then
+  cd .rbenv && git pull
+else
+  git clone git://github.com/sstephenson/rbenv.git .rbenv
+fi
+
+cd $dir && mkdir -p .rbenv/plugins && cd .rbenv/plugins/
+if [ -d ruby-build ]; then
+  cd ruby-build && git pull
+else
+  git clone git://github.com/sstephenson/ruby-build.git
+fi
 
 echo
 echo
