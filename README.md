@@ -9,13 +9,10 @@ rbenv のインストールスクリプト
 
 ## 実行されるコマンド
 
-    $ dir=`pwd`
-    $ echo 'export PATH="'$dir'/.rbenv/bin:$PATH"' >> .bash_profile
-    $ echo 'eval "$(rbenv init -)"' >> .bash_profile
-    $ git clone git://github.com/sstephenson/rbenv.git .rbenv
-    $ mkdir -p .rbenv/plugins
-    $ cd .rbenv/plugins/
-    $ git clone git://github.com/sstephenson/ruby-build.git
+1. `.bash_profile` に PATH の export を追記
+2. rbenv を .rbenv にクローン or pull
+3. ruby-build を .rbenv/plugins にクローン or pull
+4. rbenv-binstubs を .rbenv/plugins にクローン or pull
 
 ## この後に実行するコマンド
 
