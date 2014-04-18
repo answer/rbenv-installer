@@ -9,16 +9,16 @@ rbenv のインストールスクリプト
 
 ## 実行されるコマンド
 
-1. `.bash_profile` に PATH の export を追記
+1. `.bash_profile` か `.profile` に PATH の export を追記
 2. rbenv を .rbenv にクローン or pull
 3. ruby-build を .rbenv/plugins にクローン or pull
-4. rbenv-binstubs を .rbenv/plugins にクローン or pull
 
-## この後に実行するコマンド
+## インストール後の作業
 
 rbenv を有効にする
 
     $ . .bash_profile
+    $ . .profile
 
 ruby をインストールする
 
