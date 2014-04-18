@@ -19,13 +19,6 @@ else
   git clone git://github.com/sstephenson/ruby-build.git
 fi
 
-if [ -d rbenv-binstubs ]; then
-  cd rbenv-binstubs && git pull
-  cd ..
-else
-  git clone https://github.com/ianheggie/rbenv-binstubs.git
-fi
-
 echo
 echo
 echo "rbenv install complete."
