@@ -1,7 +1,15 @@
 dir=`pwd`
 
-echo 'export PATH="'$dir'/.rbenv/bin:$PATH"' >> .bash_profile
-echo 'eval "$(rbenv init -)"' >> .bash_profile
+if [ -f .bash_profile ]; then
+  profile=.bash_profile
+else
+  profile=.profile
+fi
+
+if ! [[ `grep rbenv $profile` ]]; then
+  echo 'export PATH="'$dir'/.rbenv/bin:$PATH"' >> $profile
+  echo 'eval "$(rbenv init -)"' >> $profile
+fi
 
 if [ -d .rbenv ]; then
   cd .rbenv && git pull
@@ -26,7 +34,7 @@ echo
 echo "you have to execute following command line"
 echo
 echo "to activate rbenv"
-echo "$ . .bash_profile"
+echo "$ . $profile"
 echo
 echo "to install ruby"
 echo "$ rbenv install -l # list of versions"
