@@ -30,7 +30,7 @@ if [ -d rbenv-default-gems ]; then
   cd rbenv-default-gems && git pull
   cd ..
 else
-  git clone git@github.com:rbenv/rbenv-default-gems.git
+  git clone git://github.com/rbenv/rbenv-default-gems.git
 fi
 
 echo
