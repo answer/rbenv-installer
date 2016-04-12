@@ -15,7 +15,7 @@ if [ -d .rbenv ]; then
   cd .rbenv && git pull
   cd ..
 else
-  git clone git://github.com/sstephenson/rbenv.git .rbenv
+  git clone git://github.com/rbenv/rbenv.git .rbenv
 fi
 
 mkdir -p .rbenv/plugins && cd .rbenv/plugins/
@@ -24,7 +24,13 @@ if [ -d ruby-build ]; then
   cd ruby-build && git pull
   cd ..
 else
-  git clone git://github.com/sstephenson/ruby-build.git
+  git clone git://github.com/rbenv/ruby-build.git
+fi
+if [ -d rbenv-default-gems ]; then
+  cd rbenv-default-gems && git pull
+  cd ..
+else
+  git clone git@github.com:rbenv/rbenv-default-gems.git
 fi
 
 echo
