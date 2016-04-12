@@ -5,7 +5,7 @@ rbenv のインストールスクリプト
 
 ## usage
 
-    curl -fsSL https://github.com/answer/rbenv-installer/raw/master/install.sh | bash
+    curl -fsSL https://cdn.rawgit.com/answer/rbenv-installer/master/install.sh | bash
 
 ## 実行されるコマンド
 
